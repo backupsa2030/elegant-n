@@ -443,11 +443,14 @@ p {
 }
 
 .collection-card {
+    display: block;
+    text-decoration: none;
     background: transparent;
     border-radius: 0;
     overflow: hidden;
     border: none;
     transition: var(--transition-smooth);
+    color: inherit;
 }
 
 .collection-card:hover {
@@ -457,7 +460,6 @@ p {
 .card-img {
     width: 100%;
     height: 400px;
-    /* slightly smaller to fit 4 columns */
     background-size: cover;
     background-position: center;
     border-bottom: none;
@@ -475,13 +477,34 @@ p {
 
 .card-content h3 {
     font-size: 1.4rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.8rem;
     color: var(--text-main);
+    transition: color 0.3s;
 }
 
-.card-content p {
-    margin-bottom: 0;
-    font-size: 0.95rem;
+.collection-card:hover h3 {
+    color: var(--gold-primary);
+}
+
+.card-link {
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--gold-primary);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.card-link i {
+    font-size: 0.9rem;
+    transition: transform 0.3s;
+}
+
+.collection-card:hover .card-link i {
+    transform: translateX(5px);
 }
 
 /* ==========================================================================
@@ -948,3 +971,28 @@ body.lang-ar .lang-toggle {
 .service-img-wrap:hover img {
     transform: scale(1.05);
 }
+
+/* Video CTA */
+.video-cta {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.btn-text {
+    color: var(--gold-primary);
+    text-decoration: none;
+    font-family: var(--font-secondary);
+    font-weight: 500;
+    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-text:hover {
+    gap: 0.8rem;
+    color: var(--text-main);
+}
